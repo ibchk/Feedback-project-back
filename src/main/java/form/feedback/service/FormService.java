@@ -1,10 +1,12 @@
 package form.feedback.service;
 
+import form.feedback.enums.Category;
 import form.feedback.model.Form;
 import form.feedback.repository.FormRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -18,7 +20,15 @@ public class FormService {
     }
 
     public Form addFeedback(Form feedback){
-        return formRepository.save(feedback);
+
+        List<Category> go = new LinkedList<>();
+
+        for (Category i: feedback.getCategoryList()){
+            go.add(i);
+        }
+
+        Form newFeedback = new Form(feedback.getName(), feedback.getEmail(), feedback.getText(), go);
+        return formRepository.save(newFeedback);
     }
 
 }

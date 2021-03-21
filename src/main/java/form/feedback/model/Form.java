@@ -6,9 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,10 +18,18 @@ import javax.persistence.Id;
 public class Form {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private String email;
     private String text;
-    private Category category;
+    @ElementCollection
+    private List<Category> categoryList = new LinkedList<>();
 
+    public Form(String name, String email, String text, List<Category> categoryList) {
+        setName(name);
+        setEmail(email);
+        setText(text);
+        setCategoryList(categoryList);
+    }
 }

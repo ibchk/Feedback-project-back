@@ -16,8 +16,6 @@ spring:
 #    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1 # this one is in memory
     url: jdbc:h2:./h2/form;AUTO_SERVER=TRUE # this one is on the disk, notice the h2 folder and contents it creates
     driverClassName: org.h2.Driver
-    username: sa
-    password: sa
   h2:
     console:
 #      this enables http://localhost:8080/h2-console
@@ -27,6 +25,3 @@ spring:
 logging:
   file:
     path: ./logs
-users:
-  adminName: admin
-  adminPassword: admin

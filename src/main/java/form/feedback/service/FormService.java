@@ -2,6 +2,7 @@ package form.feedback.service;
 
 import form.feedback.enums.Category;
 import form.feedback.model.Form;
+import form.feedback.model.FormDTO;
 import form.feedback.repository.FormRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,22 +13,28 @@ import java.util.List;
 @Service
 public class FormService {
 
+    Category[] categories = Category.values();
+
     @Autowired
     private FormRepository formRepository;
 
-    public List<Form> getAllFeedbacks(){
+    public List<Form> getAllFeedbacks() {
         return formRepository.findAll();
     }
 
-    public Form addFeedback(Form feedback){
+    public Form addFeedback(FormDTO feedback) {
 
-        List<Category> go = new LinkedList<>();
-
-        for (Category i: feedback.getCategoryList()){
-            go.add(i);
+        List<Category> feedbackCategories = new LinkedList<>();
+        if (feedback.getCategories() != null) {
+            for (String i : feedback.getCategories()) {
+                for (Category category : categories) {
+                    if (i.equals(category.getValue())) {
+                        feedbackCategories.add(category);
+                    }
+                }
+            }
         }
-
-        Form newFeedback = new Form(feedback.getName(), feedback.getEmail(), feedback.getText(), go);
+        Form newFeedback = new Form(feedback.getName(), feedback.getEmail(), feedback.getText(), feedbackCategories);
         return formRepository.save(newFeedback);
     }
 

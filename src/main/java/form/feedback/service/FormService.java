@@ -18,8 +18,18 @@ public class FormService {
     @Autowired
     private FormRepository formRepository;
 
-    public List<Form> getAllFeedbacks() {
-        return formRepository.findAll();
+    public List<FormDTO> getAllFeedbacks() {
+        List<FormDTO> forms = new LinkedList<>();
+        for (Form form : formRepository.findAll()) {
+            FormDTO formDTO = new FormDTO(form.getId(), form.getName(), form.getEmail(), form.getText());
+            List<String> categories = new LinkedList<>();
+            for (Category category : form.getCategoryList()) {
+                categories.add(category.getName());
+            }
+            formDTO.setCategories(categories);
+            forms.add(formDTO);
+        }
+        return forms;
     }
 
     public Form addFeedback(FormDTO feedback) {
@@ -28,7 +38,7 @@ public class FormService {
         if (feedback.getCategories() != null) {
             for (String i : feedback.getCategories()) {
                 for (Category category : categories) {
-                    if (i.equals(category.getValue())) {
+                    if (i.equals(category.getIndex())) {
                         feedbackCategories.add(category);
                     }
                 }

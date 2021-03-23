@@ -1,25 +1,33 @@
 package form.feedback.enums;
 
 public enum Category {
-    PATIENTS_PORTAL("11"),
-    DOCTORS_PORTAL("18"),
-    REGISTRATION("6"),
-    VIRTUAL_VISIT("17"),
-    OPEN_KM("23"),
-    MICROSOFT_SHAREPOINT("29");
+    PATIENTS_PORTAL("11", "Patients portal"),
+    DOCTORS_PORTAL("18", "Doctors portal"),
+    REGISTRATION("6", "Registration"),
+    VIRTUAL_VISIT("17", "Virtual visit"),
+    OPEN_KM("23", "OpenKM"),
+    MICROSOFT_SHAREPOINT("29", "Microsoft SharePoint");
 
-    private String value;
+    private String index;
+    private String name;
 
     // getter method
-    public String getValue()
+    public String getIndex()
     {
-        return this.value;
+        return this.index;
+    }
+
+    public String getName()
+    {
+        return this.name;
     }
 
     // enum constructor - cannot be public or protected
-    private Category(String value)
+    private Category(String index, String name)
     {
-        this.value = value;
+        this.index = index;
+        this.name = name;
+
     }
 
 }

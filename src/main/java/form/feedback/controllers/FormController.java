@@ -14,10 +14,9 @@ public class FormController {
 
     @Autowired
     private FormService formService;
-    private Object String;
 
     @GetMapping
-    public List<Form> getAllFeedbacks() {
+    public List<FormDTO> getAllFeedbacks() {
         return formService.getAllFeedbacks();
     }
 

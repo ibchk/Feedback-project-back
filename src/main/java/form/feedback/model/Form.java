@@ -30,6 +30,12 @@ public class Form {
     @ElementCollection
     private List<Category> categoryList;
 
+    /**
+     * Makes Form from FormDTO.
+     * NOTE!!! In FormDTO category list should be category enum values (indexes).
+     *
+     * @param feedback FormDTO
+     */
     public Form(FormDTO feedback) {
         id = feedback.getId();
         name = feedback.getName();
@@ -46,8 +52,14 @@ public class Form {
         }
     }
 
+    /**
+     * isCorrect() is used before sending Form in db, as it checks if
+     * name, email, text and categoryList are not null or empty
+     *
+     * @return boolean
+     */
     public Boolean isCorrect() {
-        return  !name.isBlank() && !email.isBlank() && !text.isBlank()
-                && categoryList != null && categoryList.size() > 0;
+        return !name.isBlank() && !email.isBlank() && !text.isBlank()
+                && categoryList != null && categoryList.isEmpty();
     }
 }

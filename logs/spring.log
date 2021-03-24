@@ -668,3 +668,28 @@ java.lang.NullPointerException: null
 2021-03-24 13:35:33.783  INFO 7992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-03-24 13:35:33.787  INFO 7992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2021-03-24 13:35:34.105  INFO 7992 --- [main] form.feedback.FeedbackApplication        : Started FeedbackApplication in 10.134 seconds (JVM running for 12.476)
+2021-03-24 13:42:56.517  INFO 2516 --- [main] form.feedback.FeedbackApplication        : Starting FeedbackApplication using Java 11.0.8 on DESKTOP-C2B44TR with PID 2516 (C:\Users\ilja1\Desktop\feedback\build\classes\java\main started by ilja1 in C:\Users\ilja1\Desktop\feedback)
+2021-03-24 13:42:56.522  INFO 2516 --- [main] form.feedback.FeedbackApplication        : No active profile set, falling back to default profiles: default
+2021-03-24 13:42:57.660  INFO 2516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-24 13:42:57.789  INFO 2516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interfaces.
+2021-03-24 13:42:58.718  INFO 2516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-24 13:42:58.729  INFO 2516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-24 13:42:58.730  INFO 2516 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-24 13:42:58.921  INFO 2516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2021-03-24 13:42:58.922  INFO 2516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2357 ms
+2021-03-24 13:42:58.983  INFO 2516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-24 13:42:59.137  INFO 2516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-24 13:42:59.145  INFO 2516 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-03-24 13:42:59.310  INFO 2516 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-24 13:42:59.363  INFO 2516 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-24 13:42:59.502  INFO 2516 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-24 13:42:59.616  INFO 2516 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-24 13:43:00.582  INFO 2516 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-24 13:43:00.594  INFO 2516 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-24 13:43:01.230  WARN 2516 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-24 13:43:01.589  INFO 2516 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-24 13:43:01.780  INFO 2516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-03-24 13:43:02.138  INFO 2516 --- [main] form.feedback.FeedbackApplication        : Started FeedbackApplication in 6.208 seconds (JVM running for 7.908)
+2021-03-24 13:43:09.128  INFO 2516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-24 13:43:09.130  INFO 2516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-24 13:43:09.132  INFO 2516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

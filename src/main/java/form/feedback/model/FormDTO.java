@@ -18,20 +18,19 @@ public class FormDTO {
     private String text;
     private List<String> categories;
 
-    public FormDTO(Long id, String name, String email, String text) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.text = text;
-    }
 
+    /**
+     * Makes FormDTO from Form
+     *
+     * @param savedFeedback Form
+     */
     public FormDTO(Form savedFeedback) {
         id = savedFeedback.getId();
         name = savedFeedback.getName();
         email = savedFeedback.getEmail();
         text = savedFeedback.getText();
         categories = new LinkedList<>();
-        for (Category category: savedFeedback.getCategoryList()){
+        for (Category category : savedFeedback.getCategoryList()) {
             categories.add(category.getName());
         }
     }

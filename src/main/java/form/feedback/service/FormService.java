@@ -37,7 +37,7 @@ public class FormService {
      * Makes form FormDTO new Form, checks that the all fields except id in not null or blank and
      * there is ore than one category. If all ok, then adds it in db and returns new FormDTO made from db Form.
      *
-     * NOTE!!! In given FormDTO category list should be category enum values (indexes).
+     * NOTE!!! In given FormDTO category list should be category enum values (indexes or names).
      *
      * @param feedback FormDTO
      * @return FormDTO

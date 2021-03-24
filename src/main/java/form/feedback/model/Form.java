@@ -32,21 +32,22 @@ public class Form {
 
     /**
      * Makes Form from FormDTO.
-     * NOTE!!! In FormDTO category list should be category enum values (indexes).
+     * NOTE!!! In FormDTO category list should be category enum values (indexes or names).
      *
      * @param feedback FormDTO
      */
     public Form(FormDTO feedback) {
-        id = feedback.getId();
         name = feedback.getName();
         email = feedback.getEmail();
         text = feedback.getText();
         categoryList = new LinkedList<>();
         Category[] categories = Category.values();
-        for (String index : feedback.getCategories()) {
-            for (Category category : categories) {
-                if (index.equals(category.getIndex())) {
-                    categoryList.add(category);
+        if (feedback.getCategories() != null){
+            for (String value : feedback.getCategories()) {
+                for (Category category : categories) {
+                    if (value.equals(category.getIndex()) || value.equals(category.getName())) {
+                        categoryList.add(category);
+                    }
                 }
             }
         }
@@ -59,7 +60,7 @@ public class Form {
      * @return boolean
      */
     public Boolean isCorrect() {
-        return !name.isBlank() && !email.isBlank() && !text.isBlank()
-                && categoryList != null && categoryList.isEmpty();
+        return name != null && email != null && text != null && categoryList != null
+                && !name.isBlank() && !email.isBlank() && !text.isBlank() && categoryList.size() > 0;
     }
 }

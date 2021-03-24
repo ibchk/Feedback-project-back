@@ -21,9 +21,8 @@ public class FormController {
     }
 
     @PostMapping
-    public Form addFeedback(@RequestBody FormDTO feedback){
+    public FormDTO addFeedback(@RequestBody FormDTO feedback){
         return formService.addFeedback(feedback);
-
     }
 
 }

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Getter
@@ -22,5 +23,16 @@ public class FormDTO {
         this.name = name;
         this.email = email;
         this.text = text;
+    }
+
+    public FormDTO(Form savedFeedback) {
+        id = savedFeedback.getId();
+        name = savedFeedback.getName();
+        email = savedFeedback.getEmail();
+        text = savedFeedback.getText();
+        categories = new LinkedList<>();
+        for (Category category: savedFeedback.getCategoryList()){
+            categories.add(category.getName());
+        }
     }
 }
